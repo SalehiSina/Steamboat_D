@@ -7,7 +7,7 @@ import scanpy as sc
 import squidpy as sq
 import pandas as pd
 
-sf.set_random_seed(0)
+
 
 
 ### File path ------------------------------
@@ -22,7 +22,7 @@ else:
 import steamboat as sf
 import steamboat.tools
 
-
+sf.set_random_seed(0)
 data_path = "../../Data/Steamboat_Data/2/Ex3_crc/"
 
 
