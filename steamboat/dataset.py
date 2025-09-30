@@ -50,7 +50,7 @@ def prep_adatas(adatas: list[sc.AnnData], n_neighs: int = 8, norm=True, log1p=Tr
     :param log_norm: Whether or not to normalize and log-transform the data, defaults to True
     :return: A list of preprocessed `SCANPY AnnData`
     """
-    with warnings.catch_warnings(action="ignore"):
+    with warnings.catch_warnings():
         warnings.simplefilter("ignore")
         for i in tqdm(range(len(adatas))):
             adata = adatas[i]

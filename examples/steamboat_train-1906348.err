@@ -1,0 +1,12 @@
+/data/horse/ws/mosa505e-venv/lib/python3.10/site-packages/dask/dataframe/__init__.py:31: FutureWarning: The legacy Dask DataFrame implementation is deprecated and will be removed in a future version. Set the configuration option `dataframe.query-planning` to `True` or None to enable the new Dask Dataframe implementation and silence this warning.
+  warnings.warn(
+/data/horse/ws/mosa505e-venv/lib/python3.10/site-packages/anndata/utils.py:434: FutureWarning: Importing read_text from `anndata` is deprecated. Import anndata.io.read_text instead.
+  warnings.warn(msg, FutureWarning)
+/data/horse/ws/mosa505e-venv/lib/python3.10/site-packages/openpyxl/worksheet/_reader.py:329: UserWarning: Unknown extension is not supported and will be removed
+  warn(msg)
+/data/horse/ws/mosa505e-venv/lib/python3.10/site-packages/anndata/_core/aligned_df.py:68: ImplicitModificationWarning: Transforming to str index.
+  warnings.warn("Transforming to str index.", ImplicitModificationWarning)
+  0%|          | 0/140 [00:00<?, ?it/s]  6%|▋         | 9/140 [00:00<00:01, 83.43it/s] 14%|█▎        | 19/140 [00:00<00:01, 89.56it/s] 23%|██▎       | 32/140 [00:00<00:01, 105.24it/s] 31%|███▏      | 44/140 [00:00<00:00, 109.15it/s] 39%|███▉      | 55/140 [00:00<00:00, 107.80it/s] 47%|████▋     | 66/140 [00:00<00:00, 101.58it/s] 55%|█████▌    | 77/140 [00:00<00:00, 100.17it/s] 64%|██████▍   | 90/140 [00:00<00:00, 107.74it/s] 74%|███████▎  | 103/140 [00:00<00:00, 112.70it/s] 84%|████████▎ | 117/140 [00:01<00:00, 120.66it/s] 93%|█████████▎| 130/140 [00:01<00:00, 121.62it/s]100%|██████████| 140/140 [00:01<00:00, 113.49it/s]
+  0%|          | 0/140 [00:00<?, ?it/s]  1%|          | 1/140 [00:01<03:03,  1.32s/it] 51%|█████▏    | 72/140 [00:01<00:00, 70.08it/s]100%|██████████| 140/140 [00:01<00:00, 93.40it/s]
+[2025-09-30 19:18:55,037::train::INFO] Epoch 1: train_loss 837.69494
+[2025-09-30 19:20:51,406::train::INFO] Epoch 201: train_loss 111.61923

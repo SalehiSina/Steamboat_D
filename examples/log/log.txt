@@ -476,3 +476,7 @@
 [2025-09-29 17:58:06,875::train::INFO] Epoch 6401: train_loss 88.56532
 [2025-09-29 17:59:38,581::train::INFO] Epoch 6579: train_loss 88.55333
 [2025-09-29 17:59:38,582::train::INFO] Stopping criterion met.
+[2025-09-30 18:43:54,262::train::INFO] Epoch 1: train_loss 837.69494
+[2025-09-30 18:46:01,561::train::INFO] Epoch 201: train_loss 111.61923
+[2025-09-30 19:18:55,037::train::INFO] Epoch 1: train_loss 837.69494
+[2025-09-30 19:20:51,406::train::INFO] Epoch 201: train_loss 111.61923
