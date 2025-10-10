@@ -8,26 +8,21 @@ device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 from uni import get_encoder
 model, transform = get_encoder(enc_name='uni2-h', device=device)
 
-
-import numpy as np
 import umap
 import matplotlib.pyplot as plt
-import torch
 from torchvision import transforms
-from PIL import Image
-
-import os
 
 import timm
-from huggingface_hub import login, hf_hub_download
+from tqdm import tqdm
+#from huggingface_hub import login, hf_hub_download
 
 
 
-login(token="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") # login with your User Access Token, found at https://huggingface.co/settings/tokens
+#login(token="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") # login with your User Access Token, found at https://huggingface.co/settings/tokens
 
 local_dir = "../assets/ckpts/uni2-h/"
-os.makedirs(local_dir, exist_ok=True)  # create directory if it does not exist
-hf_hub_download("MahmoodLab/UNI2-h", filename="pytorch_model.bin", local_dir=local_dir, force_download=True)
+#os.makedirs(local_dir, exist_ok=True)  # create directory if it does not exist
+#hf_hub_download("MahmoodLab/UNI2-h", filename="pytorch_model.bin", local_dir=local_dir, force_download=True)
 timm_kwargs = {'model_name': 'vit_base_patch16_224',
                'img_size': 224,
                'patch_size': 14,
@@ -65,9 +60,9 @@ if __name__ == "__main__":
     all_items = os.listdir(directory)
 
     embedding_dic = {}
-    for item in all_items:
+    for item in tqdm(all_items):
         # 1. Load the patch (RGB)
-        img = Image.open(f"../../Data/H&E_Patch_Examples/H&E_Patch_Examples/{item}").convert("RGB")
+        img = Image.open(f"../../Data/H&E_Patch_Examples/{item}").convert("RGB")
 
         # 2. Preprocess: resize → tensor → normalize
         transform = transforms.Compose([
@@ -79,11 +74,8 @@ if __name__ == "__main__":
 
         img_tensor = transform(img).unsqueeze(0)  # add batch dim [1, 3, 224, 224]
 
-        # 3. Load UNI model (example, you’d replace with actual checkpoint loading)
-        #model = load_uni_model("path/to/uni_checkpoint.pt")  # placeholder
-        #model.eval()
 
-        # 4. Extract embedding
+        # 3. Extract embedding
         with torch.no_grad():
             embedding = model(img_tensor.to(device))
 
@@ -130,4 +122,4 @@ if __name__ == "__main__":
     plt.title("UMAP projection of vectors")
     plt.xlabel("UMAP-1")
     plt.ylabel("UMAP-2")
-    plt.show()
+    plt.savefig("umap_projection.png", dpi=300, bbox_inches='tight')
