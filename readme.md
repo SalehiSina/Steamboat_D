@@ -21,6 +21,6 @@
 ## 📄 License
 Distributed under the MIT License. 
 
-## 👤 Authors
-- Sina — https://github.com/SalehiSina
+## 👤 Author
+- Sina Salehi
 
